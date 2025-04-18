@@ -22,5 +22,4 @@ public class FreteService {
                 .calcular(peso);
         return valor;
     }
-
 }

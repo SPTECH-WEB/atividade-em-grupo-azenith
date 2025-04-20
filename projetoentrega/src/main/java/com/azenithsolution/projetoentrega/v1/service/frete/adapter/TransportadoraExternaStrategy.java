@@ -2,7 +2,9 @@ package com.azenithsolution.projetoentrega.v1.service.frete.adapter;
 
 import com.azenithsolution.projetoentrega.v1.service.frete.strategy.FreteStrategy;
 import com.azenithsolution.projetoentrega.v1.service.frete.strategy.TransportadoraStrategy;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TransportadoraExternaStrategy implements FreteStrategy {
     private final TransportadoraStrategy transportadoraStrategy;
 

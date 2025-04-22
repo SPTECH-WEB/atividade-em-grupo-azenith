@@ -11,6 +11,6 @@ import java.util.Observer;
 public class EmailObserver implements PedidoObserver {
     @Override
     public void notificar(Pedido pedido){
-        System.out.println("E-mail enviado para: " + pedido.getCliente());
+        System.out.println("E-mail enviado para: " + pedido.getCliente().toLowerCase() +"@example.com");
     }
 }

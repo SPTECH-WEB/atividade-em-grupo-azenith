@@ -1,4 +1,4 @@
-package com.example.observerpedidos.Service.Observers;
+package com.azenithsolution.projetoentrega.v1.service.frete.observer;
 
 import com.azenithsolution.projetoentrega.v1.service.frete.observer.PedidoObserver;
 import com.azenithsolution.projetoentrega.v1.model.Pedido;

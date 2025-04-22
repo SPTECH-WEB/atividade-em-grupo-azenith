@@ -4,6 +4,7 @@ import com.azenithsolution.projetoentrega.v1.service.frete.strategy.FreteStrateg
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class FreteService {
@@ -13,12 +14,13 @@ public class FreteService {
         this.estrategias = estrategias;
     }
 
-    public double calcular(String tipoEntrega, double peso) {
+
+    public Double calcular(String tipoEntrega, Double peso) {
         System.out.println("Calculando frete para tipo de entrega: " + tipoEntrega);
-        double valor = estrategias.stream()
+        Double valor = estrategias.stream()
                 .filter(estrategia -> estrategia.tipoEntrega().equalsIgnoreCase(tipoEntrega))
                 .findFirst()
-                .orElseThrow()
+                .orElseThrow(() -> new NoSuchElementException("Tipo de entrega não disponível ou não existe."))
                 .calcular(peso);
         return valor;
     }

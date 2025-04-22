@@ -17,4 +17,5 @@ public class Pedido {
     private String produto;
     private Double peso;
     private String tipoEntrega;
+    private Double valorTotal;
 }

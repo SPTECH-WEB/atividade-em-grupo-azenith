@@ -11,6 +11,6 @@ public class ExpressaStrategy implements FreteStrategy{
 
     @Override
     public String tipoEntrega() {
-        return "pac";
+        return "expressa";
     }
 }

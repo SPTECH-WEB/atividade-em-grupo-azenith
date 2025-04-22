@@ -22,7 +22,7 @@ API RESTful para gerenciamento de pedidos e cálculo de frete, desenvolvida com 
 ## Como Clonar o Projeto
 ```bash
 
-git  clone <url-do-repositorio>
+git  clone https://github.com/SPTECH-WEB/atividade-em-grupo-azenith
 
 cd  atividade-em-grupo-azenith
 
@@ -142,7 +142,7 @@ A URL base da API é `http://localhost:8080/v1/pedidos` (assumindo que o servido
 *  **Endpoint:**  `/v1/pedidos/frete/{modalidade}`
 *  **Descrição:** Calcula o valor do frete com base na modalidade (parte da URL) e no peso (parâmetro de query).
 *  **Parâmetros de URL:**
-*  `modalidade`: O tipo de entrega (ex: `expressa`, `economica`, `externa`).
+*  `modalidade`: O tipo de entrega (ex: `expressa`, `economica`, `transportadoraExterna`).
 *  **Parâmetros de Query:**
 *  `peso`: O peso do produto (ex: `?peso=2.5`).
 *  **Exemplo de Requisição:**  `GET http://localhost:8080/v1/pedidos/frete/expressa?peso=2.5`

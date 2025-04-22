@@ -198,6 +198,6 @@ Isso facilita o tratamento das respostas no lado do cliente, pois sempre haverá
 
 Para explorar e testar os endpoints da API de forma interativa, você pode usar a interface do Swagger UI. Após iniciar a aplicação, acesse:
 
-http://localhost:8080/swagger-ui/index.html
+http://localhost:8080/api/swagger-ui/index.html
 
 (Lembre-se de substituir  `8080`  pela porta correta, caso ela seja diferente na sua execução).

@@ -7,6 +7,8 @@ import com.azenithsolution.projetoentrega.v1.dto.PedidoResponseDTO;
 import com.azenithsolution.projetoentrega.v1.model.Pedido;
 import com.azenithsolution.projetoentrega.v1.service.frete.FreteService;
 import com.azenithsolution.projetoentrega.v1.service.pedido.PedidoService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +19,7 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/v1/pedidos")
+@Tag(name = "Pedidos", description = "Endpoints para gerenciamento de pedidos e cálculo de frete")
 public class PedidoController {
     private final PedidoService pedidoService;
     private final FreteService freteService;
@@ -27,6 +30,7 @@ public class PedidoController {
     }
 
     @PostMapping
+    @Operation(summary = "Cria um novo pedido", description = "Registra um novo pedido no sistema e calcula o valor total com base no frete.")
     public ResponseEntity<ApiResponseDTO<?>> salvar(@RequestBody PedidoRequestDTO body) {
         Pedido pedido = new Pedido();
         pedido.setCliente(body.getCliente());
@@ -61,6 +65,7 @@ public class PedidoController {
     }
 
     @GetMapping
+    @Operation(summary = "Lista todos os pedidos", description = "Retorna uma lista com todos os pedidos cadastrados.")
     public ResponseEntity<ApiResponseDTO<List<Pedido>>> listarPedidos() {
         return ResponseEntity.status(HttpStatus.CREATED).body(
                 new ApiResponseDTO<>(
@@ -73,6 +78,7 @@ public class PedidoController {
     }
 
     @GetMapping("/frete/{modalidade}")
+    @Operation(summary = "Calcula o valor do frete", description = "Calcula o valor do frete com base na modalidade e peso informados.")
     public ResponseEntity<ApiResponseDTO<?>> calcularFrete(@PathVariable String modalidade, @RequestParam double peso) {
         try{
             Double valor = freteService.calcular(modalidade, peso);

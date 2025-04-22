@@ -67,7 +67,7 @@ public class PedidoController {
     @GetMapping
     @Operation(summary = "Lista todos os pedidos", description = "Retorna uma lista com todos os pedidos cadastrados.")
     public ResponseEntity<ApiResponseDTO<List<Pedido>>> listarPedidos() {
-        return ResponseEntity.status(HttpStatus.CREATED).body(
+        return ResponseEntity.status(HttpStatus.OK).body(
                 new ApiResponseDTO<>(
                         LocalDateTime.now(),
                         HttpStatus.OK.value(),

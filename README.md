@@ -141,10 +141,8 @@ A URL base da API é `http://localhost:8080/v1/pedidos` (assumindo que o servido
 *  **Método:**  `GET`
 *  **Endpoint:**  `/v1/pedidos/frete/{modalidade}`
 *  **Descrição:** Calcula o valor do frete com base na modalidade (parte da URL) e no peso (parâmetro de query).
-*  **Parâmetros de URL:**
-*  `modalidade`: O tipo de entrega (ex: `expressa`, `economica`, `transportadoraExterna`).
-*  **Parâmetros de Query:**
-*  `peso`: O peso do produto (ex: `?peso=2.5`).
+*  **Parâmetros de URL:**  `modalidade`: O tipo de entrega (ex: `expressa`, `economica`, `transportadoraExterna`).
+*  **Parâmetros de Query:** `peso`: O peso do produto (ex: `?peso=2.5`).
 *  **Exemplo de Requisição:**  `GET http://localhost:8080/v1/pedidos/frete/expressa?peso=2.5`
 *  **Corpo da Requisição:** Nenhum
 *  **Exemplo de Resposta (Sucesso - 200 OK):**
@@ -194,7 +192,7 @@ Todas as respostas da API seguem uma estrutura padrão para consistência:
 
 Isso facilita o tratamento das respostas no lado do cliente, pois sempre haverá um `timestamp`, `status` e `message`, e o campo `data` conterá o payload específico daquela requisição.
 
-## Testando com Swagger
+## Testando com Swagger UI
 
 Para explorar e testar os endpoints da API de forma interativa, você pode usar a interface do Swagger UI. Após iniciar a aplicação, acesse:
 
